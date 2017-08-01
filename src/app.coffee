@@ -43,9 +43,9 @@ crashreportToViewJson = (report) ->
       # already handled
     else if k == 'created_at'
       # change the name of this key for display purposes
-      fields.props['created'] = moment(v).fromNow()
+      fields.props['created'] = moment(v).format()
     else if v instanceof Date
-      fields.props[k] = moment(v).fromNow()
+      fields.props[k] = moment(v).format()
     else
       fields.props[k] = if v? then v else 'not present'
 
@@ -65,9 +65,9 @@ symfileToViewJson = (symfile) ->
       # pass
     else if k == 'created_at'
       # change the name of this key for display purposes
-      fields.props['created'] = moment(v).fromNow()
+      fields.props['created'] = moment(v).format()
     else if v instanceof Date
-      fields.props[k] = moment(v).fromNow()
+      fields.props[k] = moment(v).format()
     else
       fields.props[k] = if v? then v else 'not present'
 
